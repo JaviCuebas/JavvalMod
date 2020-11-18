@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "w w",
+    "w w"
+  ],
+  "key":
+  {
+    "w":
+    {
+      "item": "javval:white_yarn"
+    }
+
+  },
+  "result":
+  {
+    "item": "javval:val_socks",
+    "count": 1
+  }
+}
