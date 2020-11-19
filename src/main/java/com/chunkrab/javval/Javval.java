@@ -1,11 +1,15 @@
 package com.chunkrab.javval;
 
+import com.chunkrab.javval.entities.StrawberryEntity;
+import com.chunkrab.javval.init.ModEntityTypes;
 import com.chunkrab.javval.util.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -35,11 +39,11 @@ public class Javval
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-
+    private void setup(final FMLCommonSetupEvent event) {
+        DeferredWorkQueue.runLater(() -> {
+            GlobalEntityTypeAttributes.put(ModEntityTypes.STRAWBERRY_COW.get(), StrawberryEntity.setCustomAttributes().func_233813_a_());
+        });
     }
-
     private void doClientStuff(final FMLClientSetupEvent event) {
 
     }
